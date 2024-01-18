@@ -15,9 +15,13 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 let savedNumber = 0
 let player = ""
 let speed = 0
-speed = 50
+speed = 25
 player = "testplayer01"
 savedNumber = 0
 basic.forever(function () {
-	
+    if (speed == 100) {
+        basic.showString("Speed has reached maximum limit.")
+        speed = 50
+        servos.P1.stop()
+    }
 })
